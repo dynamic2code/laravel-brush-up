@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Home');
 });
+Route::post('/store-person', [PersonController::class, 'store'])->name('store.person');
+
+Route::get('/people', [PersonController::class, 'get'])->name('people.index');
+
